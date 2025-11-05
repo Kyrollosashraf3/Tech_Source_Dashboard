@@ -26,8 +26,9 @@ def wrangle(path):
 
 
 # Read and wrangle data
-path = "cash Cust Sales 21-31 Oct Updated.csv"
-df = wrangle(path)
+df = wrangle("New_Sales1.csv")
+
+
 # Store_Analysis
 
 store_sales= df.groupby(['STOREID',"City_Lname"]).agg({
