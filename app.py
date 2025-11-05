@@ -364,6 +364,7 @@ fig12.update_layout(xaxis_tickangle=45 , yaxis_tickformat=".3~s" )
 
 
 
+sales_by_cat = df.groupby(['dateid', 'category'])['RowTotalVatexc'].sum().reset_index()
 
 
 fig13 = px.line(
