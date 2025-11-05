@@ -103,6 +103,9 @@ Top_sub_category_sales = sub_category_sales.sort_values(by='RowTotalVatexc', asc
 
 
 
+df_orders = df.groupby(["Transactionnumber", "trans_type1",
+                          "IsDelivery","IsMaksab1" 
+                         ])["RowTotalVatexc"].sum().reset_index()
 
 
 # 1- Delivary or Not
