@@ -302,8 +302,8 @@ formatted_sales = f"{Total_Sales:,.0f}"
 total_orders = df['Transactionnumber'].nunique()
 formatted_total_orders= f"{total_orders:,.0f}"
 
-itemid_counts = df['itemid'].nunique()
-formatted_item =        f"{itemid_counts: ,.0f}"
+#itemid_counts = df['itemid'].nunique()
+#formatted_item =        f"{itemid_counts: ,.0f}"
 
 STORE_COUNTS = df['STOREID'].nunique()
 STORE_COUNTS =        f"{STORE_COUNTS: ,.0f}"
