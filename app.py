@@ -23,17 +23,16 @@ df = load_data()
 # =============================
 st.sidebar.header("🔍 Filters")
 
+min_date = df['dateid'].min().date()
+max_date = df['dateid'].max().date()
 
-min_date = df['dateid'].min()
-max_date = df['dateid'].max()
-
-# Date filter
 date_range = st.sidebar.date_input(
     "Select Date Range",
     value=(min_date, max_date),  # القيمة الافتراضية = كامل المدى
     min_value=min_date,
     max_value=max_date
 )
+
 
 
 # City filter
