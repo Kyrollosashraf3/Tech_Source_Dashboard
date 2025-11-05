@@ -1,4 +1,6 @@
-seaborn
-plotly
+streamlit
 pandas
 numpy
+
+seaborn
+plotly
