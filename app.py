@@ -340,6 +340,11 @@ fig11.update_traces(
 )
 
 
+# Add day name column
+sales_trend= df.groupby('dateid')['RowTotalVatexc'].sum().reset_index()
+sales_trend['day_name'] = sales_trend['dateid'].dt.day_name()
+
+
 
 # Plot sales trend over time with days
 fig12 = px.line(
@@ -415,11 +420,6 @@ fig14.update_layout(
 
 
 
-
-
-# Add day name column
-sales_trend= df.groupby('dateid')['RowTotalVatexc'].sum().reset_index()
-sales_trend['day_name'] = sales_trend['dateid'].dt.day_name()
 
 
 
