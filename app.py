@@ -23,6 +23,10 @@ df = load_data()
 # =============================
 st.sidebar.header("🔍 Filters")
 
+
+min_date = df['dateid'].min()
+max_date = df['dateid'].max()
+
 # Date filter
 date_range = st.sidebar.date_input(
     "Select Date Range",
