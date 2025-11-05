@@ -45,7 +45,7 @@ category_filter = st.sidebar.multiselect(
 
 # Apply filters
 filtered_df = df[
-    (df['dateid'].between(date_range[0], date_range[1])) &
+    (df['dateid'].between(pd.Timestamp(date_range[0]), pd.Timestamp(date_range[1]))) &
     (df['City_Lname'].isin(city_filter)) &
     (df['category'].isin(category_filter))
 ]
