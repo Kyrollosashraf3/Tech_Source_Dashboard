@@ -26,8 +26,11 @@ st.sidebar.header("🔍 Filters")
 # Date filter
 date_range = st.sidebar.date_input(
     "Select Date Range",
-    [df['dateid'].min(), df['dateid'].max()]
+    value=(min_date, max_date),  # القيمة الافتراضية = كامل المدى
+    min_value=min_date,
+    max_value=max_date
 )
+
 
 # City filter
 city_filter = st.sidebar.multiselect(
