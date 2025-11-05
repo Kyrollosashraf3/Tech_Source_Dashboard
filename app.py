@@ -19,7 +19,7 @@ def wrangle(path):
     # Nulls
     df['consumer_phone']= df['consumer_phone'].fillna('Unknown')
     df['sub_category']  = df['sub_category'].fillna('Unknown')
-    df['Supervisor']    = df['Supervisor'].fillna('Unknown')
+    
     df['category']      = df['category'].fillna('Unknown')
 
     return df
@@ -308,10 +308,10 @@ STORE_COUNTS =        f"{STORE_COUNTS: ,.0f}"
 
 
 
-# Sales Overview (Region → City → Store → Supervisor → Staff)
+# Sales Overview (  City → Store )
 fig10 = px.treemap(
     df,
-    path=["reg_Lname",'City_Lname','STOREID', "Supervisor", "Staff_Name"], 
+    path=['City_Lname','STOREID'], 
     values='RowTotalVatexc',
     title='Sales by City and Store',
     hover_data={'RowTotalVatexc':':,.2f'}
