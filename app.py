@@ -164,24 +164,54 @@ fig12.update_layout(xaxis_tickangle=45 , yaxis_tickformat=".3~s" )
 
 
 
+st.set_page_config(layout="wide", page_title="Dashboard")
 
+# -----------------------------
+# Section: For CEO
+# -----------------------------
+st.subheader("For CEO")
+col1, col2 = st.columns(2)
+with col1:
+    st.plotly_chart(fig12, use_container_width=True)
+with col2:
+    st.plotly_chart(fig1, use_container_width=True)
+
+# -----------------------------
+# Section: For Departments managers
+# -----------------------------
+st.subheader("For Departments managers")
+# Row 1
+col1, col2 = st.columns(2)
+with col1:
+    st.plotly_chart(fig2, use_container_width=True)
+with col2:
+    st.plotly_chart(fig3, use_container_width=True)
+
+# Row 2
+st.plotly_chart(fig4, use_container_width=True)
+
+# Row 3
+st.plotly_chart(fig10, use_container_width=True)
+
+# Row 4
+st.plotly_chart(fig11, use_container_width=True)
 
 
 # -----------------------------
-# Display figures
+# Section: For S,OP Planning
 # -----------------------------
-figures = [fig12, fig1,
-           fig2, fig3, fig4     ,
-           fig10, fig11,
-           fig5, fig7 ,
-           fig6, fig8]
+st.subheader("For S,OP Planning")
+# Row 1
+col1, col2 = st.columns(2)
+with col1:
+    st.plotly_chart(fig5, use_container_width=True)
+with col2:
+    st.plotly_chart(fig7, use_container_width=True)
 
-for i in range(0, len(figures), 2):
-    if i + 1 < len(figures):
-        col1, col2 = st.columns(2)
-        with col1:
-            st.plotly_chart(figures[i], use_container_width=True)
-        with col2:
-            st.plotly_chart(figures[i+1], use_container_width=True)
-    else:
-        st.plotly_chart(figures[i], use_container_width=True)
+# Row 2
+col1, col2 = st.columns(2)
+with col1:
+    st.plotly_chart(fig6, use_container_width=True)
+with col2:
+    st.plotly_chart(fig8, use_container_width=True)
+
