@@ -24,10 +24,15 @@ df = wrangle("New_Sales1.csv")
 # -----------------------------
 # CEO Cards
 # -----------------------------
-total_sales = f"{df['RowTotalVatexc'].sum():,.0f}"
-total_orders = df['Transactionnumber'].nunique()
-#total_orders = f"{df['Transactionnumber'].nunique()}"
-customer_count = f"{df['consumer_phone'].nunique():,.0f}"
+#total_sales = f"{df['RowTotalVatexc'].sum():,.0f}"
+#total_orders = df['Transactionnumber'].nunique()
+#customer_count = f"{df['consumer_phone'].nunique():,.0f}"
+
+total_sales=    "117,692,104"
+total_orders = "515,284"
+customer_count = "285,437"
+
+
 
 st.set_page_config(layout="wide", page_title="Dashboard")
 st.title("For CEO")
@@ -71,6 +76,7 @@ df_orders = df.groupby(["Transactionnumber", "trans_type1", "IsDelivery","IsMaks
 Order_type = df_orders["IsDelivery"].value_counts().reset_index()
 Order_Maksab = df_orders["IsMaksab1"].value_counts().reset_index()
 
+
 # -----------------------------
 # Plot helper functions
 # -----------------------------
@@ -109,6 +115,45 @@ fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delive
 
 
 
+# Sales Overview (Region → City → Store → Supervisor → Staff)
+fig10 = px.treemap(
+    df,
+    path=["reg_Lname",'City_Lname','STOREID', "Supervisor", "Staff_Name"], 
+    values='RowTotalVatexc',
+    title='Sales by City and Store',
+    hover_data={'RowTotalVatexc':':,.2f'}
+)
+
+fig10.update_traces(
+    hovertemplate='<b>%{label}</b><br>Total Sales: %{value}<extra></extra>'
+)
+
+# Sales by Category → Sub-category
+fig11 = px.treemap(
+    df,
+    path=['category','sub_category'],
+    values='RowTotalVatexc',
+    title="Sales by Category → Sub-category",
+    hover_data={'RowTotalVatexc':':,.2f'}
+ )
+
+fig11.update_traces(
+    hovertemplate='<b>%{label}</b><br>Total Sales: %{value}<extra></extra>'
+)
+
+fig12 = px.line(
+    sales_trend,
+    x='dateid',
+    y='RowTotalVatexc',
+    markers=True,
+    text='day_name',  
+    title='Sales Trend Over Time',
+    labels={'dateid': 'Date', 'RowTotalVatexc': 'Sales Amount'}
+)
+
+fig12.update_traces(textposition='top center')  
+fig12.update_layout(xaxis_tickangle=45 , yaxis_tickformat=".3~s" )
+
 
 
 
@@ -118,7 +163,12 @@ fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delive
 # -----------------------------
 # Display figures
 # -----------------------------
-figures = [fig1, fig2, fig3, fig4, fig5, fig6, fig7, fig8]
+figures = [fig12, fig1,
+           fig2, fig3, fig4     ,
+           fig10, fig11,
+           fig5, fig7 ,
+           fig6, fig8]
+
 for i in range(0, len(figures), 2):
     if i + 1 < len(figures):
         col1, col2 = st.columns(2)
