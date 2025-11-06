@@ -21,9 +21,14 @@ def wrangle(path):
 
     return df
 
+
+
 # -----------------------------
 # Read data
 # -----------------------------
+#df1 = wrangle(df1.csv)
+#df2 = wrangle(df2.csv)
+#df = .
 df = wrangle("New_Sales1.csv")
 
 # -----------------------------
@@ -38,9 +43,12 @@ total_orders = "515,284"
 customer_count = "285,437"
 
 
+st.subheader("CEO Overview")
+
+
 
 st.set_page_config(layout="wide", page_title="Dashboard")
-st.title("For CEO")
+st.title("Sales from 20 to 30 Oct")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("Total Sales", total_sales)
@@ -174,7 +182,6 @@ st.set_page_config(layout="wide", page_title="Dashboard")
 # -----------------------------
 # Section: For CEO
 # -----------------------------
-st.subheader("CEO Overview")
 col1, col2 = st.columns(2)
 with col1:
     st.plotly_chart(fig12, use_container_width=True)
