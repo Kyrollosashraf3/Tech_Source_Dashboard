@@ -14,6 +14,11 @@ def wrangle(path):
     df['consumer_phone'] = df['consumer_phone'].fillna('Unknown')
     df['sub_category'] = df['sub_category'].fillna('Unknown')
     df['category'] = df['category'].fillna('Unknown')
+
+    # تحويل Transactionnumber من float ل int ثم ل string
+    df['Transactionnumber'] = df['Transactionnumber'].apply(lambda x: str(int(x)) if pd.notnull(x) else '')
+
+
     return df
 
 # -----------------------------
