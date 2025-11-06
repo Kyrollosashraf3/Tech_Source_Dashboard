@@ -174,7 +174,7 @@ st.set_page_config(layout="wide", page_title="Dashboard")
 # -----------------------------
 # Section: For CEO
 # -----------------------------
-st.subheader("For CEO")
+st.subheader("CEO Overview")
 col1, col2 = st.columns(2)
 with col1:
     st.plotly_chart(fig12, use_container_width=True)
@@ -184,7 +184,7 @@ with col2:
 # -----------------------------
 # Section: For Departments managers
 # -----------------------------
-st.subheader("For Departments managers")
+st.subheader("Sales Managers")
 # Row 1
 col1, col2 = st.columns(2)
 with col1:
@@ -205,7 +205,7 @@ st.plotly_chart(fig11, use_container_width=True)
 # -----------------------------
 # Section: For S,OP Planning
 # -----------------------------
-st.subheader("For S,OP Planning")
+st.subheader("Planning & Inventory")
 # Row 1
 col1, col2 = st.columns(2)
 with col1:
