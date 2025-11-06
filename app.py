@@ -102,10 +102,13 @@ fig4.update_traces(text=Top_Store_Orders_count["TRANSACTION_COUNT"].apply(lambda
 fig5 = pie(Top_category_sales, names="category", values="RowTotalVatexc", title="Sales Share by Category", n=8, hover="RowTotalVatexc", hover2=None)
 fig6 = pie(Order_Maksab, names="IsMaksab1", values="count", title="Orders: Maksab vs Non-Maksab", n=4)
 fig7 = px.bar(Top_sub_category_sales.head(15), x="RowTotalVatexc", y="sub_category", orientation="h", title="Top 10 Sub Categories by Sales", text="RowTotalVatexc")
+
+
+fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delivery vs Non-Delivery", n=4)
 fig8.update_traces(marker=dict(color=pc.sample_colorscale("Blues", [i/25 for i in range(25)])[::-1]), textfont=dict(size=15, color="black"))
 fig8.update_traces(texttemplate='%{text:,.0f}', textposition='outside')
 fig8.update_layout(template="plotly_white", yaxis={'categoryorder':'total ascending'})
-fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delivery vs Non-Delivery", n=4)
+
 
 # -----------------------------
 # Display figures
