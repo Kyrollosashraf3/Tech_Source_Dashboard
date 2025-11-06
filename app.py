@@ -68,6 +68,13 @@ Order_Maksab = df_orders["IsMaksab1"].value_counts().reset_index()
 
 
 
+# CARDS
+Total_Sales = df["RowTotalVatexc"].sum()
+Total_Sales = f"{Total_Sales:,.0f}"  
+
+total_orders = df['Transactionnumber'].nunique()
+total_orders= f"{total_orders:,.0f}"
+
 Customesr_number = df["consumer_phone"].nunique()
 Customesr_number = f"{Customesr_number:,.0f}"
 
