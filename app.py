@@ -137,9 +137,16 @@ fig11 = px.treemap(
     hover_data={'RowTotalVatexc':':,.2f'}
  )
 
+
+
+
 fig11.update_traces(
     hovertemplate='<b>%{label}</b><br>Total Sales: %{value}<extra></extra>'
 )
+
+
+sales_trend= df.groupby('dateid')['RowTotalVatexc'].sum().reset_index()
+sales_trend['day_name'] = sales_trend['dateid'].dt.day_name()
 
 fig12 = px.line(
     sales_trend,
