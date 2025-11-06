@@ -118,7 +118,7 @@ fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delive
 # Sales Overview (Region → City → Store → Supervisor → Staff)
 fig10 = px.treemap(
     df,
-    path=["reg_Lname",'City_Lname','STOREID', "Supervisor", "Staff_Name"], 
+    path=['City_Lname','STOREID'], 
     values='RowTotalVatexc',
     title='Sales by City and Store',
     hover_data={'RowTotalVatexc':':,.2f'}
