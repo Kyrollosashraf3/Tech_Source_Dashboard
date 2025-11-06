@@ -25,7 +25,8 @@ df = wrangle("New_Sales1.csv")
 # CEO Cards
 # -----------------------------
 total_sales = f"{df['RowTotalVatexc'].sum():,.0f}"
-total_orders = f"{df['Transactionnumber'].nunique()}"
+total_orders = df['Transactionnumber'].nunique()
+#total_orders = f"{df['Transactionnumber'].nunique()}"
 customer_count = f"{df['consumer_phone'].nunique():,.0f}"
 
 st.set_page_config(layout="wide", page_title="Dashboard")
