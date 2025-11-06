@@ -42,13 +42,13 @@ total_sales=    "117,692,104"
 total_orders = "515,284"
 customer_count = "285,437"
 
+st.title("Sales from 20 to 30 Oct")
 
 st.subheader("CEO Overview")
 
 
 
 st.set_page_config(layout="wide", page_title="Dashboard")
-st.title("Sales from 20 to 30 Oct")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("Total Sales", total_sales)
