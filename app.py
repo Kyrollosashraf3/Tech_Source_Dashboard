@@ -25,7 +25,7 @@ df = wrangle("New_Sales1.csv")
 # CEO Cards
 # -----------------------------
 total_sales = f"{df['RowTotalVatexc'].sum():,.0f}"
-total_orders = f"{df['Transactionnumber'].nunique():,.0f}"
+total_orders = f"{df['Transactionnumber'].nunique()}"
 customer_count = f"{df['consumer_phone'].nunique():,.0f}"
 
 st.set_page_config(layout="wide", page_title="Dashboard")
@@ -105,6 +105,13 @@ fig7 = px.bar(Top_sub_category_sales.head(15), x="RowTotalVatexc", y="sub_catego
 
 
 fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delivery vs Non-Delivery", n=4)
+
+
+
+
+
+
+
 
 
 # -----------------------------
