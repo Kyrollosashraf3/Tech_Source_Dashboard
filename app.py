@@ -208,22 +208,22 @@ st.plotly_chart(fig10, use_container_width=True)
 # Row 4
 st.plotly_chart(fig11, use_container_width=True)
 
-
 # -----------------------------
 # Section: For S,OP Planning
 # -----------------------------
 st.subheader("Planning & Inventory")
+
 # Row 1
 col1, col2 = st.columns(2)
-#with col1:
+with col1:
     st.plotly_chart(fig5, use_container_width=True)
 with col2:
     st.plotly_chart(fig7, use_container_width=True)
 
 # Row 2
 col1, col2 = st.columns(2)
-#with col1:
+with col1:
     st.plotly_chart(fig6, use_container_width=True)
-#with col2:
+with col2:
     st.plotly_chart(fig8, use_container_width=True)
 
