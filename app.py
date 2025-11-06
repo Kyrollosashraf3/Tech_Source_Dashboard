@@ -105,9 +105,6 @@ fig7 = px.bar(Top_sub_category_sales.head(15), x="RowTotalVatexc", y="sub_catego
 
 
 fig8 = pie(Order_type, names="IsDelivery", values="count", title="Orders: Delivery vs Non-Delivery", n=4)
-fig8.update_traces(marker=dict(color=pc.sample_colorscale("Blues", [i/25 for i in range(25)])[::-1]), textfont=dict(size=15, color="black"))
-fig8.update_traces(texttemplate='%{text:,.0f}', textposition='outside')
-fig8.update_layout(template="plotly_white", yaxis={'categoryorder':'total ascending'})
 
 
 # -----------------------------
