@@ -66,6 +66,14 @@ df_orders = df.groupby(["Transactionnumber", "trans_type1", "IsDelivery", "IsMak
 Order_type = df_orders["IsDelivery"].value_counts().reset_index()
 Order_Maksab = df_orders["IsMaksab1"].value_counts().reset_index()
 
+
+
+Customesr_number = df["consumer_phone"].nunique()
+Customesr_number = f"{Customesr_number:,.0f}"
+
+
+
+
 # -----------------------------
 # Helper functions
 # -----------------------------
@@ -83,6 +91,9 @@ def pie(df, names, values, title, n=10, hover=None, hover2=None):
     fig.update_traces(marker=dict(colors=colors), textinfo="label+percent", textposition="inside",
                       pull=[0.08 if v == max_val else 0 for v in df[values]])
     return fig
+
+
+
 
 # -----------------------------
 # Figures
