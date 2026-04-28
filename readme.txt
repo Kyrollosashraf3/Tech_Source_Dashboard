@@ -1,149 +1,111 @@
-# Pharmacy Customer Analytics Dashboard
+# Pharmacy Sales Planning & Demand Analytics Dashboard - Tech_Source Company
 
 ## Project Overview
-This project analyzes pharmacy retail sales transactions to identify high-value customers, repeat customers, and customer purchase interests.  
-Using Python and Pandas, raw transactional data was cleaned, transformed, and converted into actionable customer insights that support marketing, operations, and inventory planning decisions.
+Built a sales planning dashboard using pharmacy transaction data to support **Supply Chain Planning, Demand Forecasting, Inventory Allocation, and Sales Operations**.
 
-The dataset contains customer purchases between **21 Oct – 31 Oct 2025**, including sales amount, city, product category, cashier, store, and transaction details.
-
----
-
-## Business Objective
-Transform raw POS sales data into customer intelligence dashboards to help management answer:
-
-- Who are the highest revenue customers?
-- Who are the most frequent returning customers?
-- What product categories are most preferred by each customer?
-- Which cities generate stronger customer activity?
-- How can customer segmentation support promotions and stock planning?
+The analysis focused on sales performance from **20 Oct to 30 Oct**, converting raw POS data into planning insights that help determine future required stock levels, fast-moving categories, and branch demand priorities.
 
 ---
 
-## Tools & Technologies
+## Executive Dashboard KPIs
+
+- **Total Sales:** 117,692,104  
+- **Total Orders:** 515,284  
+- **Total Customers:** 285,437  
+
+---
+
+## Planning Objective
+
+Use historical sales and customer demand patterns to answer:
+
+- What products/categories require higher replenishment?
+- Which branches/cities need priority stock allocation?
+- What are the top-selling subcategories to secure availability?
+- How many customer orders indicate future demand trends?
+- Which categories need safety stock planning?
+
+---
+
+## Key Analysis Performed
+
+### 1. Demand Analysis by Category
+Measured sales share by category to identify:
+
+- High-demand product families
+- Core revenue generators
+- Priority replenishment items
+
+### 2. Top 10 Subcategories by Sales
+Ranked top-selling subcategories to support:
+
+- Purchase planning
+- Supplier scheduling
+- Safety stock setting
+- Shelf availability improvement
+
+### 3. Customer Order Volume Analysis
+Used total orders and repeat customer behavior as demand indicators for:
+
+- Future order forecasting
+- Promo readiness
+- Capacity planning
+
+### 4. Regional / Branch Demand Distribution
+Analyzed sales by city / branch to optimize:
+
+- Stock transfer decisions
+- Warehouse distribution
+- Branch-level replenishment planning
+
+---
+
+## Supply Chain Impact
+
+This dashboard supports:
+
+### Inventory Planning
+- Reduce stockouts
+- Improve stock rotation
+- Optimize reorder quantities
+
+### Demand Forecasting
+- Predict next-period requirements using sales trends
+- Detect fast-moving SKUs
+
+### Procurement Planning
+- Prioritize purchase orders for top-selling categories
+- Better supplier scheduling
+
+### Operations Planning
+- Align branch inventory with actual demand
+
+---
+
+## Tools Used
+
 - Python
 - Pandas
 - NumPy
 - Matplotlib
 - Seaborn
 - Plotly
-- Excel Export Automation
+- Excel Reporting
 
 ---
 
-## Data Cleaning & Preparation
-Performed full data wrangling process:
+## Skills Demonstrated
 
-- Converted transaction date column into datetime format
-- Removed missing customer phone numbers
-- Standardized phone number format
-- Filled null values in category / sub-category / supervisor
-- Validated customer transaction records
-
----
-
-## Key Analysis Performed
-
-### 1. Unique Customer Count
-Calculated total active customers during the period:
-
-- **285,436 unique customers**
-
----
-
-### 2. Customer Interest Profiling
-Created a customer segmentation table showing:
-
-- Most purchased category
-- Most purchased sub-category
-- Main customer city
-- Number of orders
-- Total sales per customer
-
----
-
-### 3. Top Revenue Customers
-Identified customers with sales greater than **1000 SAR**.
-
-Used for:
-
-- VIP customer targeting
-- Loyalty campaigns
-- High-value retention strategy
-
----
-
-### 4. Most Frequent Customers
-Identified customers with **4+ transactions**.
-
-Used for:
-
-- Repeat purchase behavior analysis
-- Membership / loyalty programs
-- Retention campaigns
-
----
-
-### 5. Sales Distribution Analysis
-Built histograms to understand:
-
-- Customer spending behavior
-- Order frequency behavior
-- Outlier detection
-
----
-
-## Deliverables
-Generated 3 business-ready Excel reports:
-
-- `Top_customer_sales.xlsx`
-- `Top_customer_frequancy.xlsx`
-- `customer_interests.xlsx`
-
----
-
-## Business Impact
-
-This project can support:
-
-### Sales & Marketing
-- Personalized offers based on customer interests
-- Retargeting repeat customers
-- VIP customer programs
-
-### Supply Chain & Planning
-- Demand forecasting by category
-- Fast-moving item replenishment
-- City-level inventory allocation
-
-### Quality / Operations
-- Customer complaint prioritization for top-value customers
-- Service performance tracking by branch
-
----
-
-## Key Skills Demonstrated
-
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Customer Segmentation
+- Demand Planning
+- Inventory Analysis
+- Sales Forecasting
+- Supply Chain Analytics
 - KPI Dashboarding
-- Business Intelligence
-- Retail Analytics
-- Supply Chain Thinking
-- Report Automation
+- Data Cleaning
+- Business Reporting
+- Operational Planning
 
 ---
-
-## Future Improvements
-
-- Build interactive Power BI dashboard
-- Add RFM customer segmentation
-- Predict customer churn
-- Forecast category demand
-- Store performance benchmarking
-
----
-
 # Author
-Prepared by: [Your Name]  
-Role Target: Data Analyst | Supply Chain Analyst | Business Analyst
+Kyrollos Ashraf
+Target Role: Supply Chain Planner | Demand Planner | Data Analyst
